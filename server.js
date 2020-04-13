@@ -13,10 +13,8 @@ const knex = require('knex');
 const db = knex({
   client: 'pg',
   connection: {
-    host : 'postgresql-contoured-11257',
-    user : 'pkggcodrleogww',  
-    password : '',
-    database : 'smart-brain'
+    host : process.env.DATABASE_URL,
+    ssl: true,
   }
 });
 
