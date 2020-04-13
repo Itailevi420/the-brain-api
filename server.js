@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 // const fs = require('fs');
-const port = 3001;
 const cors = require('cors');
 const bcrypt = require('bcryptjs');
 const register = require('./controller/register')
@@ -56,7 +55,7 @@ app.put('/image', (req, res) => image.handleImage(req, res, db));
 app.post('/imageurl', (req, res) => image.handleApiCall(req, res));
 
 
-app.listen(process.env.PORT || port, () => {
+app.listen(process.env.PORT, () => {
   console.log(`app is running on port ${process.env.PORT}`)
 });
 
