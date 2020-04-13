@@ -29,9 +29,7 @@ app.use(cors());
 
 
 
-// app.get('/', (req, res) => {
-//   res.send(database.users);
-// })
+app.get('/', (req, res) =>   {res.send(`It's working Emmm... I think ;)`)})
 // we pass bcrypt & db to the function via dependence injection like so. 
 // instead of importing them in function file (although that would work too).
 app.post('/signin', (req, res) =>  signin.handleSignin(req, res, bcrypt, db))
