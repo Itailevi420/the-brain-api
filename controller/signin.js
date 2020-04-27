@@ -13,12 +13,18 @@ const handleSignin = (req, res, bcrypt, db) => {
      db.select('*').from('users')
         .where('email', '=', email)
         .then(user => res.json(user[0]))
-        .catch(err => res.status(400).json('unable to get user'))
+        .catch(err => {
+          res.status(400).json(`unable to get user`);
+          console.log(err);
+        })
     } else{
        throw(err);
     }
   })
-  .catch(err => res.status(400).json('email or password does not exist'))
+  .catch(err => {
+    res.status(400).json('email or password does not exist');
+    console.log(err);
+  })
 }
 
 module.exports = {
